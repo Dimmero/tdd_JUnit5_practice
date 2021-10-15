@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ToDo.List.BasicToDoListPropertiesTest" time="0.598" tests="26" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="16"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Dimmer\Desktop\TrustMe\tdd_JUnit5_practice\target\test-classes;C:\Users\Dimmer\Desktop\TrustMe\tdd_JUnit5_practice\target\classes;C:\Users\Dimmer\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\Dimmer\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Dimmer\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\Dimmer\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Dimmer\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\Dimmer\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\3.0.0-M5\maven-surefire-plugin-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\maven-surefire-common\3.0.0-M5\maven-surefire-common-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-api\3.0.0-M5\surefire-api-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.0.0-M5\surefire-logger-api-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-extensions-api\3.0.0-M5\surefire-extensions-api-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-booter\3.0.0-M5\surefire-booter-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.0.0-M5\surefire-extensions-spi-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\maven-toolchain\3.0-alpha-2\maven-toolchain-3.0-alpha-2.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\shared\maven-artifact-transfer\0.11.0\maven-artifact-transfer-0.11.0.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\shared\maven-common-artifact-filters\3.0.1\maven-common-artifact-filters-3.0.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Dimmer\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Dimmer\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Dimmer\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Dimmer\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\shared\maven-shared-utils\3.1.0\maven-shared-utils-3.1.0.jar;C:\Users\Dimmer\.m2\repository\commons-io\commons-io\2.5\commons-io-2.5.jar;C:\Users\Dimmer\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Dimmer\.m2\repository\org\codehaus\plexus\plexus-java\1.0.5\plexus-java-1.0.5.jar;C:\Users\Dimmer\.m2\repository\org\ow2\asm\asm\7.2\asm-7.2.jar;C:\Users\Dimmer\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M9\qdox-2.0-M9.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.0.0-M4\surefire-shared-utils-3.0.0-M4.jar;C:\Users\Dimmer\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.14.1\log4j-slf4j-impl-2.14.1.jar;C:\Users\Dimmer\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Dimmer\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Dimmer\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Dimmer\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Warsaw"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="16"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-16.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\Dimmer\AppData\Local\Temp\surefire18242960478997144427\surefirebooter11048156455333497028.jar C:\Users\Dimmer\AppData\Local\Temp\surefire18242960478997144427 2021-10-15T23-06-44_666-jvmRun1 surefire13906480339569861113tmp surefire_02646106162980639105tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Dimmer\Desktop\TrustMe\tdd_JUnit5_practice\target\test-classes;C:\Users\Dimmer\Desktop\TrustMe\tdd_JUnit5_practice\target\classes;C:\Users\Dimmer\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\Dimmer\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Dimmer\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\Dimmer\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Dimmer\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\Dimmer\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\3.0.0-M5\maven-surefire-plugin-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\maven-surefire-common\3.0.0-M5\maven-surefire-common-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-api\3.0.0-M5\surefire-api-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.0.0-M5\surefire-logger-api-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-extensions-api\3.0.0-M5\surefire-extensions-api-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-booter\3.0.0-M5\surefire-booter-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.0.0-M5\surefire-extensions-spi-3.0.0-M5.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\maven-toolchain\3.0-alpha-2\maven-toolchain-3.0-alpha-2.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\shared\maven-artifact-transfer\0.11.0\maven-artifact-transfer-0.11.0.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\shared\maven-common-artifact-filters\3.0.1\maven-common-artifact-filters-3.0.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Dimmer\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Dimmer\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Dimmer\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Dimmer\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\shared\maven-shared-utils\3.1.0\maven-shared-utils-3.1.0.jar;C:\Users\Dimmer\.m2\repository\commons-io\commons-io\2.5\commons-io-2.5.jar;C:\Users\Dimmer\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Dimmer\.m2\repository\org\codehaus\plexus\plexus-java\1.0.5\plexus-java-1.0.5.jar;C:\Users\Dimmer\.m2\repository\org\ow2\asm\asm\7.2\asm-7.2.jar;C:\Users\Dimmer\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M9\qdox-2.0-M9.jar;C:\Users\Dimmer\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.0.0-M4\surefire-shared-utils-3.0.0-M4.jar;C:\Users\Dimmer\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar;C:\Users\Dimmer\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.14.1\log4j-slf4j-impl-2.14.1.jar;C:\Users\Dimmer\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Dimmer\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Dimmer\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Dimmer\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Dimmer"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-04-20"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-16.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Dimmer\Desktop\TrustMe\tdd_JUnit5_practice"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Dimmer\AppData\Local\Temp\surefire18242960478997144427\surefirebooter11048156455333497028.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="16.0.1+9-24"/>
+    <property name="user.name" value="Dimmer"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Dimmer\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Dimmer\AppData\Local\Temp\"/>
+    <property name="java.version" value="16.0.1"/>
+    <property name="user.dir" value="C:\Users\Dimmer\Desktop\TrustMe\tdd_JUnit5_practice"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-16.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Dimmer\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\SourceGear\Common\DiffMerge;C:\webdriver;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Dimmer\AppData\Local\Microsoft\WindowsApps;C:\Users\Dimmer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Dimmer\AppData\Local\GitHubDesktop\bin;D:\apache-maven-3.8.2\bin;C:\webdriver;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="16.0.1+9-24"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="60.0"/>
+  </properties>
+  <testcase name="listShouldBeEmptyAfterCreation" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.1"/>
+  <testcase name="testRemoveItemByString" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.531"/>
+  <testcase name="testAddingItemToList" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.532">
+    <system-out><![CDATA[
+]]></system-out>
+  </testcase>
+  <testcase name="testFilterItemsByStatus" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.533"/>
+  <testcase name="testCombiningListsIntoOne" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.43"/>
+  <testcase name="testItemsSortedByTitle" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.534"/>
+  <testcase name="testSeveralItemsToggling" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.535"/>
+  <testcase name="testCombiningListsIntoOneWithNewTitle" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.536"/>
+  <testcase name="testSeveralItemsCompletion" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.002"/>
+  <testcase name="testListHasSize0AfterCreationAndIncreasesAfterAddingItems" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.001"/>
+  <testcase name="listHasTitleAndSize" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.004"/>
+  <testcase name="testNoDuplicateTitles" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.003"/>
+  <testcase name="testListWithEmptyTitle" classname="ToDo.List.BasicToDoListPropertiesTest" time="0.002"/>
+  <testcase name="shouldCompleteATaskRepresentedByItem" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.537"/>
+  <testcase name="testPredicate" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.538"/>
+  <testcase name="shouldCreateTodoItemWithTitleAndDescription" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.538"/>
+  <testcase name="shouldNotToggleStatusFromCompleteToInProgress" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.003"/>
+  <testcase name="shouldToggleStatusFromCompleteToInProgress" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.538"/>
+  <testcase name="shouldNotSetANewDescriptionLongerThan250Chars" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.538"/>
+  <testcase name="shouldThrowAnExceptionWhileCreatingItemWithEmptyTitle" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.018"/>
+  <testcase name="shouldToggleStatusFromInProgressToPending" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.004"/>
+  <testcase name="shouldToggleStatusFromPendingToInProgress" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0"/>
+  <testcase name="shouldThrowAnExceptionWhileSettingAnEmptyTitle" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.003"/>
+  <testcase name="shouldNotCreateATodoItemWithDescriptionLongerThan250Chars" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.002"/>
+  <testcase name="shouldNotCreateATodoItemWithNullDescription" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.002"/>
+  <testcase name="shouldNotSetAnNullNewDescription" classname="ToDo.Item.BasicTodoItemPropertiesTest" time="0.003"/>
+</testsuite>

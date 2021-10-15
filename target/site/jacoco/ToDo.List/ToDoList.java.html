@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ToDoList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd_JUnit5_practice</a> &gt; <a href="index.source.html" class="el_package">ToDo.List</a> &gt; <span class="el_source">ToDoList.java</span></div><h1>ToDoList.java</h1><pre class="source lang-java linenums">package ToDo.List;
+
+import ToDo.Item.ItemStatus;
+import ToDo.Item.ToDoItem;
+import ToDo.exceptions.DuplicateItemException;
+import ToDo.exceptions.TitleListValidationException;
+import ToDo.exceptions.ToDoItemValidationException;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class ToDoList {
+    private String title;
+    private ToDoItem item;
+    private ArrayList&lt;ToDoItem&gt; toDoItemArrayList;
+    private ArrayList&lt;ToDoItem&gt; filteredList;
+
+<span class="fc" id="L18">    public ToDoList(String title) {</span>
+<span class="fc" id="L19">        this.title = title;</span>
+<span class="fc" id="L20">        verifyListTitle(title);</span>
+<span class="fc" id="L21">        this.toDoItemArrayList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L22">        this.filteredList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L23">    }</span>
+
+    public static ToDoList of(String title) {
+<span class="pc bpc" id="L26" title="1 of 4 branches missed.">        if (title == null || title.isBlank()) {</span>
+<span class="fc" id="L27">            throw new ToDoItemValidationException(&quot;Null or Blank title&quot;);</span>
+        } else {
+<span class="fc" id="L29">            return new ToDoList(title);</span>
+        }
+    }
+
+    public String getTitle() {
+<span class="fc" id="L34">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L38">        this.title = title;</span>
+<span class="fc" id="L39">    }</span>
+
+    public ArrayList&lt;ToDoItem&gt; getToDoItemArrayList() {
+<span class="fc" id="L42">        return toDoItemArrayList;</span>
+    }
+
+    public ArrayList&lt;ToDoItem&gt; getFilteredList() {
+<span class="fc" id="L46">        return filteredList;</span>
+    }
+
+    public void verifyListTitle(String title) {
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        if (title.isBlank()) {</span>
+<span class="nc" id="L51">            throw new TitleListValidationException(&quot;You cannot create list with blank title&quot;);</span>
+        }
+<span class="fc" id="L53">    }</span>
+
+    public boolean addItemToList(ToDoItem item) {
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (ToDoItem toDoItem : toDoItemArrayList) {</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            if (toDoItem.getTitle().equals(item.getTitle())) {</span>
+<span class="fc" id="L58">                throw new DuplicateItemException(&quot;There is an item with the same title in the list already&quot;);</span>
+            }
+<span class="fc" id="L60">        }</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if (toDoItemArrayList.contains(item)) return false;</span>
+        else {
+<span class="fc" id="L63">            return toDoItemArrayList.add(item);</span>
+        }
+    }
+
+    public void combineListsIntoOne(String newTitle, ToDoList firstList, ToDoList secondList) {
+<span class="pc bpc" id="L68" title="2 of 4 branches missed.">        if (firstList.getToDoItemArrayList() != null &amp;&amp; secondList.getToDoItemArrayList() != null) {</span>
+<span class="fc" id="L69">            firstList.getToDoItemArrayList().addAll(secondList.getToDoItemArrayList());</span>
+<span class="fc" id="L70">            firstList.setTitle(newTitle);</span>
+        }
+<span class="fc" id="L72">    }</span>
+
+    public boolean removeItem(String title) {
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">        if (findItem(title) == -1) return false;</span>
+        else {
+<span class="fc" id="L77">            toDoItemArrayList.remove(item);</span>
+<span class="fc" id="L78">            return true;</span>
+        }
+    }
+
+    private int findItem(String itemTitle) {
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">        for (int i = 0; i &lt; toDoItemArrayList.size(); i++) {</span>
+<span class="fc" id="L84">            ToDoItem toDoItem = toDoItemArrayList.get(i);</span>
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">            if (toDoItem.getTitle().equals(itemTitle)) {</span>
+<span class="fc" id="L86">                return i;</span>
+            }
+        }
+<span class="nc" id="L89">        return -1;</span>
+    }
+
+    public void filterByStatus(ItemStatus status) {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        for (ToDoItem item : toDoItemArrayList) {</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">            if (item.getStatus() == status) {</span>
+<span class="fc" id="L95">                filteredList.add(item);</span>
+            }
+<span class="fc" id="L97">        }</span>
+<span class="fc" id="L98">    }</span>
+
+    public ArrayList&lt;ToDoItem&gt; sortByTitle() {
+<span class="fc" id="L101">        ArrayList&lt;ToDoItem&gt; list = new ArrayList&lt;&gt;(toDoItemArrayList);</span>
+<span class="fc" id="L102">        list.sort(Comparator.comparing(ToDoItem::getTitle));</span>
+<span class="fc" id="L103">        return list;</span>
+    }
+
+    public void multipleToggle() {
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        for (ToDoItem toDoItem : toDoItemArrayList) {</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">            if (toDoItem.getStatus() == ItemStatus.PENDING) {</span>
+<span class="fc" id="L109">                toDoItem.toggleStatus();</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            } else if (toDoItem.getStatus() == ItemStatus.IN_PROGRESS) {</span>
+<span class="nc" id="L111">                toDoItem.toggleStatus();</span>
+            }
+<span class="fc" id="L113">        }</span>
+<span class="fc" id="L114">    }</span>
+
+    public void multipleComplete() {
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        for (ToDoItem toDoItem : toDoItemArrayList) {</span>
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">            if (toDoItem.getStatus() == ItemStatus.IN_PROGRESS) {</span>
+<span class="nc" id="L119">                toDoItem.complete();</span>
+            }
+<span class="fc" id="L121">        }</span>
+<span class="fc" id="L122">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

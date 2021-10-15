@@ -3,14 +3,10 @@ package ToDo.Item;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import java.util.List;
-import java.util.function.Predicate;
-
 public class BaseTest {
     protected String title;
     protected String description;
     protected ToDoItem item;
-
 
     @BeforeEach
     public void creatingToDoObject() {

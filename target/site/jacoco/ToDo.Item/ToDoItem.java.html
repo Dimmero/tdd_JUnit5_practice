@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ToDoItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd_JUnit5_practice</a> &gt; <a href="index.source.html" class="el_package">ToDo.Item</a> &gt; <span class="el_source">ToDoItem.java</span></div><h1>ToDoItem.java</h1><pre class="source lang-java linenums">package ToDo.Item;
+
+import ToDo.exceptions.ToDoItemValidationException;
+import ToDo.exceptions.TooLongOrNullDescriptionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+public class ToDoItem implements StatusChangeable {
+    private String title;
+    private String description;
+    private ItemStatus status;
+<span class="fc" id="L18">    public static List&lt;Predicate&lt;String&gt;&gt; criteria = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L19">    protected static final Logger logger = LoggerFactory.getLogger(ToDoItem.class);</span>
+
+<span class="fc" id="L21">    public ToDoItem(String title, String description) {</span>
+<span class="fc" id="L22">        this.title = title;</span>
+<span class="fc" id="L23">        this.description = description;</span>
+<span class="fc" id="L24">        this.status = ItemStatus.PENDING;</span>
+<span class="fc" id="L25">    }</span>
+
+<span class="nc" id="L27">    public ToDoItem() {</span>
+<span class="nc" id="L28">    }</span>
+
+    public String getTitle() {
+<span class="fc" id="L31">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="pc bpc" id="L35" title="2 of 4 branches missed.">        if (title == null || title.isBlank()) {</span>
+<span class="fc" id="L36">            throw new ToDoItemValidationException(&quot;The title is either null or empty&quot;);</span>
+        }
+<span class="nc" id="L38">        this.title = title;</span>
+<span class="nc" id="L39">    }</span>
+
+    public String getDescription() {
+<span class="fc" id="L42">        return description;</span>
+    }
+
+    public ItemStatus getStatus() {
+<span class="fc" id="L46">        return status;</span>
+    }
+
+    public void setStatus(ItemStatus status) {
+<span class="nc" id="L50">        this.status = status;</span>
+<span class="nc" id="L51">    }</span>
+
+    public void setDescription(String description) {
+<span class="nc" id="L54">        validateDescription(description);</span>
+<span class="nc" id="L55">        this.description = description;</span>
+<span class="nc" id="L56">    }</span>
+
+    public static ToDoItem of(String title, String description) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (criteria.isEmpty()){</span>
+<span class="fc" id="L60">        createListOfCriteria();</span>
+        }
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (title == null) {</span>
+<span class="fc" id="L63">            throw new ToDoItemValidationException(&quot;Null&quot;);</span>
+        }
+<span class="fc" id="L65">        validateTitle(title, criteria);</span>
+<span class="fc" id="L66">        validateDescription(description);</span>
+<span class="fc" id="L67">        return new ToDoItem(title, description);</span>
+    }
+
+    private static void validateDescription(String description) {
+<span class="pc bpc" id="L71" title="1 of 4 branches missed.">        if (description == null || description.isBlank()) {</span>
+<span class="fc" id="L72">            throw new TooLongOrNullDescriptionException(&quot;The description is either null or empty&quot;);</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        } else if (description.toCharArray().length &gt; 250) {</span>
+<span class="fc" id="L74">            throw new TooLongOrNullDescriptionException(&quot;The description can't be longer than 250 characters&quot;);</span>
+        }
+<span class="fc" id="L76">    }</span>
+
+    static List&lt;Predicate&lt;String&gt;&gt; createListOfCriteria() {
+<span class="fc" id="L79">        Predicate&lt;String&gt; criterionWithNull = Objects::nonNull;</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        Predicate&lt;String&gt; criterionWithZeroSize = str -&gt; !str.isBlank();</span>
+<span class="fc" id="L81">        criteria.add(criterionWithNull);</span>
+<span class="fc" id="L82">        criteria.add(criterionWithZeroSize);</span>
+<span class="fc" id="L83">        return criteria;</span>
+    }
+
+    private static void validateTitle(String title, List&lt;Predicate&lt;String&gt;&gt; criteria) {
+        List&lt;Boolean&gt; booleans;
+<span class="fc" id="L88">        booleans = criteria.stream().map(it -&gt; it.test(title)).collect(Collectors.toList());</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        booleans = booleans.stream().filter(b -&gt; !b).collect(Collectors.toList());</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if (!booleans.isEmpty()) {</span>
+<span class="fc" id="L91">            throw new ToDoItemValidationException(&quot;The title is either null or blank&quot;);</span>
+        }
+
+
+//        stream pipeline for criteria
+//        each criterion get a title to perform checks
+//        collect to list of boolean
+//        filter to find false, collect to list and check if list size is &gt; 0
+<span class="fc" id="L99">    }</span>
+
+    @Override
+    public void toggleStatus() {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        if (this.status == ItemStatus.PENDING) {</span>
+<span class="fc" id="L104">            this.status = ItemStatus.IN_PROGRESS;</span>
+        } else {
+<span class="fc" id="L106">            this.status = ItemStatus.PENDING;</span>
+        }
+<span class="fc" id="L108">    }</span>
+    @Override
+    public void biDirectionalToggleStatus() {
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (this.status == ItemStatus.PENDING) {</span>
+<span class="fc" id="L112">            this.status = ItemStatus.IN_PROGRESS;</span>
+<span class="pc bpc" id="L113" title="1 of 2 branches missed.">        } else if (this.status == ItemStatus.COMPLETED) {</span>
+<span class="fc" id="L114">            this.status = ItemStatus.IN_PROGRESS;</span>
+        } else {
+<span class="nc" id="L116">            this.status = ItemStatus.PENDING;</span>
+        }
+<span class="fc" id="L118">    }</span>
+
+    @Override
+    public void complete() {
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        if (this.status == ItemStatus.IN_PROGRESS) {</span>
+<span class="fc" id="L123">            this.status = ItemStatus.COMPLETED;</span>
+        }
+<span class="fc" id="L125">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

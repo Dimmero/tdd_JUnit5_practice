@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+tdd_JUnit5_practice,ToDo.List,ToDoList,21,204,13,23,5,50,12,21,0,15
+tdd_JUnit5_practice,ToDo.List,SetOfLists,3,0,0,0,1,0,1,0,1,0
+tdd_JUnit5_practice,ToDo.exceptions,DuplicateItemException,0,4,0,0,0,2,0,1,0,1
+tdd_JUnit5_practice,ToDo.exceptions,ToDoItemValidationException,0,4,0,0,0,2,0,1,0,1
+tdd_JUnit5_practice,ToDo.exceptions,TooLongOrNullDescriptionException,0,4,0,0,0,2,0,1,0,1
+tdd_JUnit5_practice,ToDo.exceptions,TitleListValidationException,4,0,0,0,2,0,1,0,1,0
+tdd_JUnit5_practice,ToDo.Item,ToDoItem,20,179,5,23,10,46,8,25,3,16
+tdd_JUnit5_practice,ToDo.Item,ItemStatus,0,21,0,0,0,4,0,1,0,1

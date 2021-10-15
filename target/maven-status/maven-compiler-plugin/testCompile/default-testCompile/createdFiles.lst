@@ -1,0 +1,7 @@
+ToDo\Item\BaseTest.class
+ToDo\ToDoArgumentsProvider.class
+ToDo\Item\BasicTodoItemPropertiesTest$MyArgumentsClass.class
+ToDo\List\BaseTestList.class
+ToDo\matchers\ValidToDoItemMatcher.class
+ToDo\Item\BasicTodoItemPropertiesTest.class
+ToDo\List\BasicToDoListPropertiesTest.class

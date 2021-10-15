@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -75,13 +76,7 @@ public class ToDoItem implements StatusChangeable {
     }
 
     static List<Predicate<String>> createListOfCriteria() {
-        Predicate<String> criterionWithNull = str -> {
-            if (str == null) {
-                return false;
-            } else {
-                return true;
-            }
-        };
+        Predicate<String> criterionWithNull = Objects::nonNull;
         Predicate<String> criterionWithZeroSize = str -> !str.isBlank();
         criteria.add(criterionWithNull);
         criteria.add(criterionWithZeroSize);
@@ -93,13 +88,8 @@ public class ToDoItem implements StatusChangeable {
         booleans = criteria.stream().map(it -> it.test(title)).collect(Collectors.toList());
         booleans = booleans.stream().filter(b -> !b).collect(Collectors.toList());
         if (!booleans.isEmpty()) {
-            throw new ToDoItemValidationException("THe title is either null or blank");
+            throw new ToDoItemValidationException("The title is either null or blank");
         }
-        for (Boolean b :
-             booleans) {
-            System.out.println(b);
-        }
-
 
 
 //        stream pipeline for criteria
@@ -112,8 +102,6 @@ public class ToDoItem implements StatusChangeable {
     public void toggleStatus() {
         if (this.status == ItemStatus.PENDING) {
             this.status = ItemStatus.IN_PROGRESS;
-        } else if (this.status == ItemStatus.COMPLETED) {
-            this.status = ItemStatus.COMPLETED;
         } else {
             this.status = ItemStatus.PENDING;
         }
